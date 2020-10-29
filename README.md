@@ -7,7 +7,7 @@ This project is a template project to scaffold or create the initial structure o
 | File Name        | Description                                                                                 |
 | ---------------- | ------------------------------------------------------------------------------------------- |
 | `└── tests/`     | _This folder should contains the tests for your domain app._                                |
-| `data.py`        | This file should contains the methods to perform the CRUD operations.                       |
+| `crud.py`        | This file should contains the methods to perform the CRUD operations.                       |
 | `filters.py`     | This file should contains the filters that you want to apply to your model.                 |
 | `models.py`      | This file should contains the models of your domain app.                                    |
 | `README.md`      | This file contains the documentation of this project.                                       |

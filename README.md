@@ -6,7 +6,7 @@ This project is a template project to scaffold or create the initial structure o
 
 | File Name        | Description                                                                                 |
 | ---------------- | ------------------------------------------------------------------------------------------- |
-| `└── tests/`     | _This folder contains the tests for your domain app._                                       |
+| `└── tests/`     | _This folder should contains the tests for your domain app._                                |
 | `data.py`        | This file should contains the methods to perform the CRUD operations.                       |
 | `filters.py`     | This file should contains the filters that you want to apply to your model.                 |
 | `models.py`      | This file should contains the models of your domain app.                                    |
@@ -14,7 +14,6 @@ This project is a template project to scaffold or create the initial structure o
 | `schema.py`      | This file should contains the Queries and Mutations for your domain app.                    |
 | `serializers.py` | This file should contains the serializers for your domain app.                              |
 | `types.py`       | This file should contains the types that you want to expose in graphql for your domain app. |
-
 
 # Scaffolding a domain app
 

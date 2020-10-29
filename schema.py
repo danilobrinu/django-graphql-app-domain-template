@@ -5,7 +5,7 @@ from django.db.transaction import atomic
 from graphene import Field, List, NonNull, ObjectType, Mutation, ResolveInfo
 
 # Local packages
-from . import models, types, data
+from . import models, types, filters, data
 
 
 class Create{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutation, Mutation):

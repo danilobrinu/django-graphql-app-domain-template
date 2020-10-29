@@ -4,10 +4,10 @@
 from rest_framework.serializers import ModelSerializer
 
 # Local packages
-from .models import {{ camel_case_app_name }}
+from . import models
 
 
 class {{ camel_case_app_name }}Serializer(ModelSerializer):
     class Meta:
-        model = {{ camel_case_app_name }}
+        model = models.{{ camel_case_app_name }}
         fields = "__all__"

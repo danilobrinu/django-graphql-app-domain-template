@@ -8,14 +8,14 @@ from . import models, types, serializers
 
 
 def get_{{ app_name }}(where: types.{{ camel_case_app_name }}WhereUniqueInput) -> models.{{ camel_case_app_name }}:
-     _, instance_id = from_global_id(where.get("id"))
+    _, instance_id = from_global_id(where.get("id"))
     instance = models.{{ camel_case_app_name }}.objects.get(id=instance_id)
     
     return instance
 
 
 def create_{{ app_name  }}(data: types.{{ camel_case_app_name }}CreateInput) -> models.{{ camel_case_app_name }}:
-    serializer = serializer.{{ camel_case_app_name }}Serializer(data=data)
+    serializer = serializers.{{ camel_case_app_name }}Serializer(data=data)
     serializer.is_valid(raise_exception=True)
     serializer.save()
 

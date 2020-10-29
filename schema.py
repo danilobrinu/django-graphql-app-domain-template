@@ -10,11 +10,11 @@ from . import models, types, filters, crud
 
 class Create{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutation, gql.Mutation):
     class Arguments:
-        data = types.DroidCreateInput(required=True)
+        data = types.{{ camel_case_app_name }}CreateInput(required=True)
 
     @atomic
     def mutate(
-        _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, data: types.DroidCreateInput,
+        _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, data: types.{{ camel_case_app_name }}CreateInput,
     ) -> models.{{ camel_case_app_name }}:
         return crud.create_{{ app_name }}(data)
 
@@ -22,11 +22,11 @@ class Create{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutat
 class Update{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutation, gql.Mutation):
     class Arguments:
         where = types.{{ camel_case_app_name }}WhereUniqueInput(required=True)
-        data = types.DroidUpdateInput(required=True)
+        data = types.{{ camel_case_app_name }}UpdateInput(required=True)
 
     @atomic
     def mutate(
-        _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereUniqueInput, data: types.DroidUpdateInput,
+        _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereUniqueInput, data: types.{{ camel_case_app_name }}UpdateInput,
     ) -> models.{{ camel_case_app_name }}:
         return crud.update_{{ app_name }}(where, data)
 

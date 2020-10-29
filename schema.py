@@ -5,7 +5,7 @@ import graphene as gql
 from django.db.transaction import atomic
 
 # Local packages
-from . import models, types, filters, data
+from . import models, types, filters, crud
 
 
 class Create{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutation, gql.Mutation):
@@ -16,7 +16,7 @@ class Create{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutat
     def mutate(
         _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, data: types.DroidCreateInput,
     ) -> models.{{ camel_case_app_name }}:
-        return data.create_{{ app_name }}(data)
+        return crud.create_{{ app_name }}(data)
 
 
 class Update{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutation, gql.Mutation):
@@ -28,7 +28,7 @@ class Update{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutat
     def mutate(
         _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereUniqueInput, data: types.DroidUpdateInput,
     ) -> models.{{ camel_case_app_name }}:
-        return data.update_{{ app_name }}(where, data)
+        return crud.update_{{ app_name }}(where, data)
 
 
 class Delete{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutation, gql.Mutation):
@@ -39,7 +39,7 @@ class Delete{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutat
     def mutate(
         _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereUniqueInput,
     ) -> models.{{ camel_case_app_name }}:
-        return data.delete_{{ app_name }}(where)
+        return crud.delete_{{ app_name }}(where)
 
 
 class Query(gql.ObjectType):
@@ -49,7 +49,7 @@ class Query(gql.ObjectType):
     def resolve_{{ app_name }}(
         _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereUniqueInput,
     ) -> models.{{ camel_case_app_name }}:
-        return data.get_{{ app_name }}(where)
+        return crud.get_{{ app_name }}(where)
 
     def resolve_{{ app_name }}s(
         _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereInput = None,

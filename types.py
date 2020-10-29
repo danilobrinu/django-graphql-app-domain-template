@@ -1,11 +1,11 @@
 # Built-in packages
 
 # Third-party packages
-from graphene import Node, ID, String, ObjectType, InputObjectType
+from graphene import Node, ID, ObjectType, InputObjectType
 from graphene_django import DjangoObjectType
 
 # Local packages
-from . import models, filters
+from . import models
 
 
 class {{ camel_case_app_name }}(DjangoObjectType, interfaces=(Node,)):

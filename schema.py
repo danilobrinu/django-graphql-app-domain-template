@@ -54,7 +54,7 @@ class Query(ObjectType):
     def resolve_starship(
         _root: models.{{ camel_case_app_name }}, _info: ResolveInfo, where: types.{{ camel_case_app_name }}WhereUniqueInput,
     ) -> models.{{ camel_case_app_name }}:
-        return get_{{ app_name }}(where)
+        return data.get_{{ app_name }}(where)
 
 
 class Mutation(ObjectType):

@@ -46,15 +46,15 @@ class Query(gql.ObjectType):
     {{ app_name }} = gql.Field(types.Starship, where=types.{{ camel_case_app_name }}WhereUniqueInput(required=True))
     {{ app_name }}s = gql.Field(gql.List(gql.NonNull(types.{{ camel_case_app_name }})), where=types.{{ camel_case_app_name }}WhereInput())
 
-    def resolve_starships(
-        _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereInput = None,
-    ) -> list[models.{{ camel_case_app_name }}]:
-        return filters.{{ camel_case_app_name }}Filter(data=where).queryset
-
-    def resolve_starship(
+    def resolve_{{ app_name }}(
         _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereUniqueInput,
     ) -> models.{{ camel_case_app_name }}:
         return data.get_{{ app_name }}(where)
+
+    def resolve_{{ app_name }}s(
+        _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereInput = None,
+    ) -> list[models.{{ camel_case_app_name }}]:
+        return filters.{{ camel_case_app_name }}Filter(data=where).queryset
 
 
 class Mutation(gql.ObjectType):

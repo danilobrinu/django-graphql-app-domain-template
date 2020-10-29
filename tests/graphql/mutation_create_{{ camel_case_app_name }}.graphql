@@ -1,0 +1,5 @@
+mutation create{{ app_name }}($data: {{ app_name }}CreateInput!) {
+    create{{ app_name }}(data: $data) {
+        id
+    }
+}

@@ -1,0 +1,5 @@
+mutation update{{ app_name }}($where: {{ app_name }}WhereUniqueInput!, $data: {{ app_name }}UpdateInput!) {
+    update{{ app_name }}(where: $where, data: $data) {
+        id
+    }
+}

@@ -1,0 +1,5 @@
+query get{{ app_name }}s($where: {{ app_name }}WhereInput!) {
+    get{{ app_name }}s(where: $where) {
+        id
+    }
+}

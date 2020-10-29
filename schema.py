@@ -43,7 +43,7 @@ class Delete{{ camel_case_app_name }}(types.{{ camel_case_app_name }}OutputMutat
 
 
 class Query(gql.ObjectType):
-    {{ app_name }} = gql.Field(types.Starship, where=types.{{ camel_case_app_name }}WhereUniqueInput(required=True))
+    {{ app_name }} = gql.Field(types.{{ camel_case_app_name }}, where=types.{{ camel_case_app_name }}WhereUniqueInput(required=True))
     {{ app_name }}s = gql.Field(gql.List(gql.NonNull(types.{{ camel_case_app_name }})), where=types.{{ camel_case_app_name }}WhereInput())
 
     def resolve_{{ app_name }}(

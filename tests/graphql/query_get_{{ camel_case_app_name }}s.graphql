@@ -1,5 +1,0 @@
-query get{{ app_name }}s {
-    get{{ app_name }}s {
-        id
-    }
-}

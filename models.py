@@ -6,5 +6,5 @@ from django.db import models
 # Local packages
 
 
-class {{ app_name }}(models.Model):
+class {{ camel_case_app_name }}(models.Model):
     pass

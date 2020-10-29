@@ -1,0 +1,5 @@
+query get{{ camel_case_app_name }}s {
+    get{{ camel_case_app_name }}s {
+        id
+    }
+}

@@ -7,32 +7,32 @@ from graphql_relay import from_global_id
 from . import models, types, serializers
 
 
-def get_{{ camel_case_app_name }}(where: types.{{ app_name }}WhereUniqueInput) -> models.{{ app_name }}:
+def get_{{ app_name }}(where: types.{{ camel_case_app_name }}WhereUniqueInput) -> models.{{ camel_case_app_name }}:
      _, instance_id = from_global_id(where.get("id"))
-    instance = models.{{ app_name }}.objects.get(id=instance_id)
+    instance = models.{{ camel_case_app_name }}.objects.get(id=instance_id)
     
     return instance
 
 
-def create_{{ camel_case_app_name  }}(data: types.{{ app_name }}CreateInput) -> models.{{ app_name }}:
-    serializer = serializer.{{ app_name }}Serializer(data=data)
+def create_{{ app_name  }}(data: types.{{ camel_case_app_name }}CreateInput) -> models.{{ camel_case_app_name }}:
+    serializer = serializer.{{ camel_case_app_name }}Serializer(data=data)
     serializer.is_valid(raise_exception=True)
     serializer.save()
 
     return serializer.instance
 
 
-def update_{{ camel_case_app_name }}(where: types.{{ app_name }}WhereInput, data: types.{{ app_name }}UpdateInput) -> models.{{ app_name }}:
-    instance = get_{{ camel_case_app_name }}(where)
-    serializer = serializers.{{ app_name }}Serializer(instance, data=data, partial=True)
+def update_{{ app_name }}(where: types.{{ camel_case_app_name }}WhereInput, data: types.{{ camel_case_app_name }}UpdateInput) -> models.{{ camel_case_app_name }}:
+    instance = get_{{ app_name }}(where)
+    serializer = serializers.{{ camel_case_app_name }}Serializer(instance, data=data, partial=True)
     serializer.is_valid(raise_exception=True)
     serializer.save()
 
     return serializer.instance
 
 
-def delete_{{ camel_case_app_name }}(where: types.{{ app_name }}WhereUniqueInput) -> models.{{ app_name }}:
-    instance = get_{{ camel_case_app_name }}(where)
+def delete_{{ app_name }}(where: types.{{ camel_case_app_name }}WhereUniqueInput) -> models.{{ camel_case_app_name }}:
+    instance = get_{{ app_name }}(where)
     instance.delete()
 
     return instance

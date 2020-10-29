@@ -1,0 +1,5 @@
+mutation update{{ camel_case_app_name }}($where: {{ camel_case_app_name }}WhereUniqueInput!, $data: {{ camel_case_app_name }}UpdateInput!) {
+    update{{ camel_case_app_name }}(where: $where, data: $data) {
+        id
+    }
+}

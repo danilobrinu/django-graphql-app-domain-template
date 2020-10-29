@@ -1,0 +1,5 @@
+mutation create{{ camel_case_app_name }}($data: {{ camel_case_app_name }}CreateInput!) {
+    create{{ camel_case_app_name }}(data: $data) {
+        id
+    }
+}

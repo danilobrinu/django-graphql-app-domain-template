@@ -8,29 +8,29 @@ from graphene_django import DjangoObjectType
 from . import models, filters
 
 
-class {{ app_name }}(DjangoObjectType, interfaces=(Node,)):
+class {{ camel_case_app_name }}(DjangoObjectType, interfaces=(Node,)):
     """An object with an ID."""
 
     class Meta:
-        model = models.{{ app_name }}
+        model = models.{{ camel_case_app_name }}
         filter_fields = []
 
 
-class {{ app_name }}OutputMutation(ObjectType):
-    Output = {{ app_name }}
+class {{ camel_case_app_name }}OutputMutation(ObjectType):
+    Output = {{ camel_case_app_name }}
 
 
-class {{ app_name }}WhereUniqueInput(InputObjectType):
+class {{ camel_case_app_name }}WhereUniqueInput(InputObjectType):
     id = ID()
 
 
-class {{ app_name }}WhereInput(InputObjectType):
+class {{ camel_case_app_name }}WhereInput(InputObjectType):
     pass
 
 
-class {{ app_name }}CreateInput(InputObjectType):
+class {{ camel_case_app_name }}CreateInput(InputObjectType):
     pass
 
 
-class {{ app_name }}UpdateInput(InputObjectType):
+class {{ camel_case_app_name }}UpdateInput(InputObjectType):
     pass

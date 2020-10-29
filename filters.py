@@ -4,10 +4,10 @@
 from django_filters import FilterSet
 
 # Local packages
-from .models import {{ app_name }}
+from .models import {{ camel_case_app_name }}
 
 
-class {{ app_name }}Filter(FilterSet):
+class {{ camel_case_app_name }}Filter(FilterSet):
     class Meta:
-        model = {{ app_name }}
+        model = {{ camel_case_app_name }}
         fields = []

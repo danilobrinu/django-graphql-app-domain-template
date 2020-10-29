@@ -1,5 +1,0 @@
-mutation delete{{ app_name }}($where: {{ app_name }}WhereUniqueInput!) {
-    delete{{ app_name }}(where: $where) {
-        id
-    }
-}

@@ -1,0 +1,5 @@
+mutation delete{{ camel_case_app_name }}($where: {{ camel_case_app_name }}WhereUniqueInput!) {
+    delete{{ camel_case_app_name }}(where: $where) {
+        id
+    }
+}

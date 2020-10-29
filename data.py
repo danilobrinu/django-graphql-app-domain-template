@@ -1,14 +1,14 @@
 # Built-in packages
 
 # Third-party packages
-from graphql_relay import from_global_id
+import graphql_relay as relay_gql
 
 # Local packages
 from . import models, types, serializers
 
 
 def get_{{ app_name }}(where: types.{{ camel_case_app_name }}WhereUniqueInput) -> models.{{ camel_case_app_name }}:
-    _, instance_id = from_global_id(where.get("id"))
+    _, instance_id = relay_gql.from_global_id(where.get("id"))
     instance = models.{{ camel_case_app_name }}.objects.get(id=instance_id)
     
     return instance

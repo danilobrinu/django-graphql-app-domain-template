@@ -1,14 +1,14 @@
 # Built-in packages
 
 # Third-party packages
-from graphene import Node, ID, ObjectType, InputObjectType
-from graphene_django import DjangoObjectType
+import graphene as gql
+import graphene_django as django_gql
 
 # Local packages
 from . import models
 
 
-class {{ camel_case_app_name }}(DjangoObjectType, interfaces=(Node,)):
+class {{ camel_case_app_name }}(django_gql.DjangoObjectType, interfaces=(gql.Node,)):
     """An object with an ID."""
 
     class Meta:
@@ -16,21 +16,21 @@ class {{ camel_case_app_name }}(DjangoObjectType, interfaces=(Node,)):
         filter_fields = []
 
 
-class {{ camel_case_app_name }}OutputMutation(ObjectType):
+class {{ camel_case_app_name }}OutputMutation(gql.ObjectType):
     Output = {{ camel_case_app_name }}
 
 
-class {{ camel_case_app_name }}WhereUniqueInput(InputObjectType):
-    id = ID()
+class {{ camel_case_app_name }}WhereUniqueInput(gql.InputObjectType):
+    id = gql.ID()
 
 
-class {{ camel_case_app_name }}WhereInput(InputObjectType):
+class {{ camel_case_app_name }}WhereInput(gql.InputObjectType):
     pass
 
 
-class {{ camel_case_app_name }}CreateInput(InputObjectType):
+class {{ camel_case_app_name }}CreateInput(gql.InputObjectType):
     pass
 
 
-class {{ camel_case_app_name }}UpdateInput(InputObjectType):
+class {{ camel_case_app_name }}UpdateInput(gql.InputObjectType):
     pass

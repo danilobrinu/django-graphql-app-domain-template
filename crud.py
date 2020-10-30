@@ -4,7 +4,7 @@
 import graphql_relay as relay_gql
 
 # Local packages
-from . import models, types, serializers
+from . import models, types, serializers, filters
 
 
 def get_{{ app_name }}(where: types.{{ camel_case_app_name }}WhereUniqueInput) -> models.{{ camel_case_app_name }}:
@@ -12,6 +12,10 @@ def get_{{ app_name }}(where: types.{{ camel_case_app_name }}WhereUniqueInput) -
     instance = models.{{ camel_case_app_name }}.objects.get(id=instance_id)
     
     return instance
+
+
+def get_{{ app_name }}s(where: types.{{ camel_case_app_name }}WhereInput) -> list[models.{{ camel_case_app_name }}]:
+    return filters.{{ camel_case_app_name }}Filter(where).qs
 
 
 def create_{{ app_name  }}(data: types.{{ camel_case_app_name }}CreateInput) -> models.{{ camel_case_app_name }}:

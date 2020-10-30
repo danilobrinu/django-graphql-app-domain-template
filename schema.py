@@ -54,7 +54,7 @@ class Query(gql.ObjectType):
     def resolve_{{ app_name }}s(
         _root: models.{{ camel_case_app_name }}, _info: gql.ResolveInfo, where: types.{{ camel_case_app_name }}WhereInput = None,
     ) -> list[models.{{ camel_case_app_name }}]:
-        return filters.{{ camel_case_app_name }}Filter(data=where).queryset
+        return crud.get_{{ app_name }}s(where)
 
 
 class Mutation(gql.ObjectType):
